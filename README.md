@@ -1,1 +1,3 @@
 # Learning
+
+PEOPLE ARE TRASH....
