@@ -1,0 +1,111 @@
+import java.io.*;
+import java.util.*;
+public class Stack
+{
+int arr[];
+int top;
+int size;
+Stack(int n)
+{
+arr=new int [n];
+size=n;
+top=-1;
+}
+public void push(int x)
+{
+if(top<size-1)
+{
+System.out.println("INSERTING"+x);
+top++;
+arr[top]=x;
+System.out.println("THE NEW STACK IS:");
+for(int i=0;i<=top;i++)
+{
+System.out.print(arr[i]+" ");
+}
+System.out.println();
+}
+else
+{
+System.out.println("STACK IS FULL");
+}
+}
+public void pop()
+{
+if(top>=0)
+{
+top--;
+System.out.println("THE NEW STACK IS:");
+for(int i=0;i<=top;i++)
+{
+System.out.print(arr[i]+" ");
+}
+System.out.println();
+}
+else
+{
+System.out.println("UNDERFLOW");
+}
+}
+void peek()
+{
+if(top<0)
+{
+System.out.println("Stack is empty");
+}
+else
+{
+ System.out.println("THE TOPMOST ELEMENT IS:"+arr[top]);
+}
+}
+public static void main(String args[])throws IOException
+{
+Scanner sc=new Scanner(System.in);
+System.out.println("ENTER THE SIZE OF THE STACK"); 
+int s=sc.nextInt();
+Stack st=new Stack(s);
+int n;
+int r=0;
+while(r==0)
+{
+System.out.println("ENTER YOUR CHOICE");
+System.out.println("ENTER 1.FOR PUSH OPERATION,2.FOR POP OPERATION,3.FOR PEEK OPERATION,4.TO EXIT FROM THE PROGRAM");
+n=sc.nextInt();
+switch(n)
+{
+case 1:
+{
+System.out.println("ENTER YOUR ELEMENT TO PUSH IN THE STACK");
+int a=sc.nextInt();
+st.push(a);
+break;
+}
+case 2:
+{
+st.pop();
+break;
+}
+case 3:
+{
+st.peek();
+break;
+}
+case 4:
+{
+r=1;
+break;
+}
+default:
+System.out.println("Wrong choice");
+}
+}
+}
+}
+
+
+
+
+
+
+
+
